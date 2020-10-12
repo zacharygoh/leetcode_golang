@@ -1,0 +1,46 @@
+func distributeCandies(candies []int) int {
+    unique_candy := make(map[int]bool)
+    for _, value := range candies {
+        if !unique_candy[value] {
+            unique_candy[value] = true
+        }
+    }
+    if len(unique_candy) < len(candies)/2 {
+        return len(unique_candy)
+    }
+    return len(candies)/2
+}
+
+/* 
+	Example 1:
+
+	Input: candies = [1,1,2,2,3,3]
+	Output: 3
+	Explanation:
+	There are three different kinds of candies (1, 2 and 3), and two candies for each kind.
+	Optimal distribution: The sister has candies [1,2,3] and the brother has candies [1,2,3], too. 
+	The sister has three different kinds of candies. 
+
+	Example 2:
+
+	Input: candies = [1,1,2,3]
+	Output: 2
+
+	Explanation: For example, the sister has candies [2,3] and the brother has candies [1,1]. 
+	The sister has two different kinds of candies, the brother has only one kind of candies.
+
+	Example 3:
+
+	Input: candies = [1,1]
+	Output: 1
+
+	Example 4:
+
+	Input: candies = [1,11]
+	Output: 1
+
+	Example 5:
+
+	Input: candies = [2,2]
+	Output: 1
+*/
