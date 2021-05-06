@@ -38,10 +38,8 @@ func maxSubarraySumCircular(A []int) (result int) {
 			Negative value comparison
 		 */
         result = A[0]
-        lol := A[0]
         for _, value := range A {
-            lol = max(value, lol+value)
-            result = max(result, lol)
+            result = max(result, value)
         }
         return
     }
